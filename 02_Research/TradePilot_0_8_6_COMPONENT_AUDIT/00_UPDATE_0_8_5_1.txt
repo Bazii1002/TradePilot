@@ -1,0 +1,30 @@
+TRADEPILOT BACKTEST 0.8.5.1 SCORE AUDIT FIX
+============================================================
+
+DIES IST EIN PATCH FUER DEINEN BEREITS VORHANDENEN 0.8.5-ORDNER.
+
+Behoben:
+1) Score-Audit-Absturz KeyError B061_Unternehmensscore.
+   Ursache: Der TURBO-Pfad hatte die 0.6.1/0.6.2-Auditspalten nicht in die Beobachtungen geschrieben.
+2) Score-Audit kann fehlende Auditspalten defensiv aus den Rohkomponenten rekonstruieren.
+3) Kurs-Einzelfallback nutzt zwei Methoden und einen nicht-parallelen Download als zweiten Versuch.
+4) BAT-Dateien enthalten keinen alten Benutzerpfad mehr und verwenden das installierte Python aus PATH.
+
+WICHTIG: DEINEN backtest_cache NICHT LOESCHEN.
+
+UPDATE AUF DEM PC:
+1. Laufenden Backtester schliessen.
+2. ZIP entpacken.
+3. Alle Dateien aus dem entpackten Ordner nach
+   C:\TradePilot\02_Backtester\TradePilot_0_8_5_SCORE_AUDIT
+   kopieren und vorhandene Dateien ersetzen.
+4. Den vorhandenen Ordner backtest_cache NICHT loeschen oder ueberschreiben.
+5. 01_SELFTEST.bat starten. Erwartet:
+   TradePilot 0.8.5.1 SCORE AUDIT FIX SELFTEST: OK
+6. Danach 02_AUDIT_250.bat starten.
+7. Erst wenn der Score-Audit am Ende sauber gespeichert wurde, 03_AUDIT_350.bat starten.
+8. Danach 04_AUDIT_FULL.bat.
+
+Der vorhandene Cache wird weiterverwendet. Beim erneuten 250er-Lauf sollten daher die bereits erfolgreichen Daten groesstenteils aus dem Cache kommen.
+
+Die 0.6.1-Scorelogik selbst wurde NICHT geaendert.

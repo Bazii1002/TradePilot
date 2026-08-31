@@ -1,0 +1,38 @@
+TRADEPILOT 0.8.12.1 TRUE HOLDOUT UNIVERSE HTML FIX
+====================================================
+
+FIX GEGENÜBER 0.8.12
+---------------------
+0.8.12 konnte den geladenen Wikipedia-HTML-Inhalt falsch an pandas.read_html
+übergeben. Dadurch konnte die PowerShell mit dem kompletten HTML-Quelltext
+zugeschüttet werden.
+
+0.8.12.1:
+- übergibt HTML als BytesIO-Dateiobjekt
+- begrenzt HTML-Parser-Fehler auf eine kurze Meldung
+- Selftest prüft jetzt zusätzlich eine echte HTML-Tabelle
+- verändert KEINE Holdout-Regel und KEINE Scorelogik
+
+HOLDOUT-QUELLE
+--------------
+S&P MidCap 400 + S&P SmallCap 600
+
+AUSSCHLUSS
+----------
+Alle Symbole aus dem 0.8.11 TRUE HOLDOUT LOCK.
+
+START
+-----
+1. 01_SELFTEST_HOLDOUT_UNIVERSE.bat
+2. 02_BUILD_TRUE_HOLDOUT_UNIVERSE.bat
+
+Nur falls lxml fehlt:
+3. 03_INSTALL_LXML_IF_NEEDED.bat
+danach Schritt 2 erneut.
+
+DAUERHAFTER OUTPUT
+------------------
+C:\TradePilot\03_Research_Data\
+TradePilot_True_Holdout_Universe_0.8.12.1.csv
+
+Nach erfolgreichem Lauf bitte die Abschlussausgabe schicken.

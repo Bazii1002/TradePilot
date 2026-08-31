@@ -1,0 +1,71 @@
+TRADEPILOT 0.8.14 SECOND HOLDOUT LOCK + UNIVERSE
+==================================================
+
+WARUM 0.8.14 NOCH KEIN BACKTEST IST
+-----------------------------------
+Nach 0.8.13 haben wir zwei Hypothesen, die wir weiterverfolgen wollen.
+Damit der nächste Test methodisch sauber bleibt, werden zuerst Hypothesen
+UND zweites Testuniversum eingefroren. Ergebnisse werden in 0.8.14 noch
+nicht angesehen.
+
+EINGEFRORENE HYPOTHESEN
+------------------------
+H1:
+0.6.1 Unternehmensscore >=70
+UND 0.6.1 Einstiegsscore >=70
+
+WICHTIG:
+H1 wurde erst NACH Sichtung von 0.8.13 ausgewählt.
+0.8.13 zählt deshalb NICHT als unabhängige Bestätigung von H1.
+
+H2:
+CAPITAL_MARKETS
+Value_Trap 20-59
+UND Drawdown_Score 40-59
+
+H2 war bereits vor 0.8.13 eingefroren und erreichte dort WATCH.
+
+SECOND HOLDOUT
+--------------
+Quelle:
+Offizielle iShares Russell 2000 ETF (IWM) Holdings CSV
+
+Ausschluss:
+- alle 494 Discovery-Symbole aus 0.8.11
+- alle 999 Aktien aus 0.8.12.1, unabhängig davon, ob 0.8.13 für sie Daten bekam
+
+Auswahl ist regelblind:
+- keine Renditen
+- kein Alpha
+- keine Scores
+- keine Fundamentals
+- nur IWM-Mitgliedschaft, Asset Class=Equity und Ausschluss bereits verwendeter Symbole
+
+START
+-----
+1. 01_SELFTEST_SECOND_HOLDOUT.bat
+2. 02_BUILD_SECOND_HOLDOUT.bat
+
+OUTPUT
+------
+Dauerhaft:
+C:\TradePilot\03_Research_Data\TradePilot_Second_Holdout_Universe_0.8.14.csv
+
+Im 0.8.14-Ordner:
+TradePilot_0_8_14_SECOND_HOLDOUT_LOCK.json
+TradePilot_0_8_14_FROZEN_HYPOTHESES.csv
+TradePilot_0_8_14_EXCLUDED_PREVIOUSLY_USED.csv
+TradePilot_Second_Holdout_Universe_0.8.14.csv
+
+NÄCHSTER SCHRITT
+----------------
+Erst 0.8.15 testet H1 und H2 auf diesem eingefrorenen Universum.
+
+METHODISCHE GRENZEN
+-------------------
+- aktuelles IWM-Universum -> Current-membership/Survivorship Bias
+- Marktperioden überlappen weiterhin
+- Yahoo-Fundamentals nicht vollständig revisionssicher point-in-time
+- Symbol-Holdout ist stärkere Replikation, aber kein wissenschaftlicher Beweis
+
+Keine Produktions-Scorelogik wird verändert.

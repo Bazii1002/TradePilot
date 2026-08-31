@@ -1,0 +1,16 @@
+Nach dem 250er-Lauf am besten schicken:
+
+1. Den kompletten Terminal-Output als TXT.
+2. Die erzeugte TradePilot_ScoreAudit_0.8.5_....csv.
+3. Falls vorhanden: Fehlermeldungen einzelner Aktien.
+
+Besonders wichtig sind im Terminal:
+- Kursphase
+- Fundamentalphase
+- Backtestphase
+- Anzahl Beobachtungen
+- SCORE AUDIT 0.8.5
+- KERNVERGLEICH U>=70 & E>=65
+- Gesamtlaufzeit
+
+Danach entscheiden wir gemeinsam, ob 350/502 direkt folgen oder etwas korrigiert wird.

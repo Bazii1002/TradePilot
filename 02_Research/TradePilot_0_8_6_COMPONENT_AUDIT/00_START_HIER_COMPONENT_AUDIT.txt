@@ -1,0 +1,32 @@
+TRADEPILOT 0.8.6 COMPONENT AUDIT
+
+ZIEL
+0.6.1 wird NICHT verändert. 0.8.6 prüft die sechs Rohkomponenten getrennt:
+- Qualitaet
+- Entwicklung
+- Bewertung
+- Value_Trap
+- Drawdown_Score
+- Trend
+
+EMPFOHLENER SCHNELLER ABLAUF
+1. Ordner nach C:\TradePilot\TradePilot_0_8_6_COMPONENT_AUDIT entpacken.
+2. Aus deinem 0.8.5.1-Ordner die neueste Datei
+   TradePilot_Backtest_0.8.5.1_SCORE_AUDIT_FIX_....csv
+   in diesen 0.8.6-Ordner KOPIEREN.
+3. 01_SELFTEST_COMPONENT_AUDIT.bat starten. Erwartet: OK.
+4. 02_COMPONENT_AUDIT_LATEST_CSV.bat starten.
+5. Danach diese beiden neu erzeugten Dateien an ChatGPT schicken:
+   TradePilot_ComponentAudit_Bands_0.8.6_....csv
+   TradePilot_ComponentAudit_Summary_0.8.6_....csv
+
+ALTERNATIV
+Wenn du den kompletten Backtest neu laufen lassen willst, kopiere den backtest_cache aus 0.8.5.1 hierher und starte 03_FULL_BACKTEST_0_8_5_1.bat. Danach 02_COMPONENT_AUDIT_LATEST_CSV.bat.
+
+WICHTIG
+- Keine Gewichte wurden geändert.
+- Safety-Gates wurden nicht geändert.
+- 0.6.1 bleibt Referenz.
+- Die Auswertung wird getrennt für ALLE, STANDARD, BANK, CAPITAL_MARKETS und ENERGY erzeugt.
+- Pro Band werden 12M Median, Alpha, Sektor-Alpha, Aktien, Episoden, Positivquote und <=-20%-Quote berechnet.
+- Zusätzlich wird je Komponente eine rangbasierte Korrelation zur 12M-Rendite/Alpha ausgegeben.

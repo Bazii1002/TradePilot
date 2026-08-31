@@ -1,0 +1,42 @@
+TRADEPILOT 0.8.13 TRUE HOLDOUT BACKTEST
+========================================
+
+Ablauf:
+1. 0.8.12.1-Holdout-Hash wird geprüft.
+2. 0.8.11 Seen-Symbol-Lock wird geprüft; Overlap muss 0 sein.
+3. 999 Holdout-Aktien werden REGELBLIND nur nach Sektor/Industrie klassifiziert.
+4. Der bewährte unveränderte 0.6.1-Backtestkern aus 0.8.5.1 läuft auf dem Holdout.
+5. Erst danach werden die bereits eingefrorenen Regeln ausgewertet.
+
+Eingefrorene Regeln:
+- STANDARD Recovery: DD>=80 + Bewertung<=54
+- BANK: Basismodell; Trend55-79 als Bestätigung
+- CAPITAL_MARKETS primär: Trap20-59 + DD40-59
+- CAPITAL_MARKETS sekundär: Qualität55-69 + Entwicklung<=54
+- ENERGY: keine neue Regel; nur 0.6.1-Referenz
+
+Vorab festgelegtes PASS:
+- n>=20
+- >=10 Aktien
+- >=10 Episoden
+- Median Alpha >0
+- Episoden-Alpha >0
+- aktiengewichteter Alpha >0
+- <=-20%-Quote <=20%
+WATCH: n>=5 + positiver Median-Alpha bei kleiner Stichprobe.
+FAIL: sonst.
+
+Start:
+1) 01_SELFTEST_TRUE_HOLDOUT_BACKTEST.bat
+2) 02_RUN_TRUE_HOLDOUT_BACKTEST.bat
+
+Der erste Lauf kann bei 999 Aktien deutlich länger dauern. Cache:
+C:\TradePilot\03_Research_Data\holdout_cache_0_8_13
+
+03_RUN...REFRESH nur verwenden, wenn bewusst neu geladen werden soll.
+
+Ergebnisse werden zusätzlich dauerhaft nach C:\TradePilot\03_Research_Data geschrieben.
+
+Methodische Grenzen bleiben: aktuelle Indexmitgliedschaft/Survivorship Bias, Yahoo-Fundamentals nicht vollständig revision-safe point-in-time, gemeinsame Marktregime.
+
+Keine Produktions-Scorelogik wird verändert. Keine Holdout-Schwelle wird optimiert.

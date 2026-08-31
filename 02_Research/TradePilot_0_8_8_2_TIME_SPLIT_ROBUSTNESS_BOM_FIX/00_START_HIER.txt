@@ -1,0 +1,13 @@
+TradePilot 0.8.8.2 TIME-SPLIT / ROBUSTNESS BOM FIX
+
+Fix gegenüber 0.8.8.1:
+- UTF-8-BOM in erster CSV-Spalte wird automatisch entfernt.
+- '\ufeffSymbol' wird korrekt als 'Symbol' erkannt.
+- führende/abschließende Leerzeichen in Spaltennamen werden bereinigt.
+- Selftest prüft explizit ein BOM-präfixiertes Symbol-Feld.
+
+Start:
+1. 01_SELFTEST_TIME_SPLIT_ROBUSTNESS.bat
+2. 02_RUN_TIME_SPLIT_ROBUSTNESS_FULL.bat
+
+Keine Scorelogik wurde verändert.

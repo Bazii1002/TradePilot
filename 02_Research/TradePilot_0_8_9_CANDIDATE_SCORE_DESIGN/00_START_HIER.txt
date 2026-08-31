@@ -1,0 +1,51 @@
+TRADEPILOT 0.8.9 CANDIDATE SCORE DESIGN
+=========================================
+
+ZIEL
+----
+Direkter Forschungsvergleich der neuen modellabhängigen Kandidaten gegen die
+unveränderte 0.6.1-Referenz.
+
+STANDARD
+- 0.6.1 U>=70 & E>=65
+- Recovery: DD>=80 + Bewertung<=54
+- Union: Baseline ODER Recovery
+
+BANK
+- gesamte BANK-Baseline
+- Trend 55-79
+
+CAPITAL_MARKETS
+- 0.6.1 U>=70 & E>=65
+- Trap 20-59 + DD 40-59
+- Qualität 55-69 + Entwicklung <=54
+- Union beider Kandidaten
+
+ENERGY
+- vorerst nur 0.6.1-Referenz
+
+AUSWERTUNG
+----------
+- 12M Median
+- SPY Alpha Median
+- Sektor Alpha Median
+- Episoden-Alpha
+- aktiengewichteter Alpha
+- Positivquote
+- <= -20 %
+- Early/Late
+- 2023/2024 vs 2025
+- Research Grade A/B/C
+
+START
+-----
+1. 01_SELFTEST_CANDIDATE_SCORE_DESIGN.bat
+2. 02_RUN_CANDIDATE_SCORE_DESIGN_FULL.bat
+
+Die vorhandene Full-CSV wird automatisch gesucht.
+UTF-8-BOM wird unterstützt.
+
+WICHTIG
+-------
+Keine Scorelogik wird in der Produktions-App verändert.
+Research Grade A/B/C ist keine Handelsfreigabe.

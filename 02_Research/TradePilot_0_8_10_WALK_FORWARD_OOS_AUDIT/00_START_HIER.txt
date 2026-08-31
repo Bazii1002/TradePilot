@@ -1,0 +1,59 @@
+TRADEPILOT 0.8.10 WALK-FORWARD / OUT-OF-SAMPLE AUDIT
+=======================================================
+
+ZIEL
+----
+Die in 0.8.9 festgelegten Kandidaten werden ohne weitere Schwellenanpassung
+in einem zeitlich getrennten Validierungsblock geprüft.
+
+TRAIN
+-----
+2023-06-30 bis 2024-06-30
+
+GAP
+---
+2024-07-01 bis 2024-08-31
+
+VALIDATION
+----------
+2024-09-01 bis 2025-06-30
+
+EINGEFRORENE REGELN
+-------------------
+STANDARD
+- Baseline: U>=70 & E>=65
+- Recovery: DD>=80 & Bewertung<=54
+
+BANK
+- gesamtes BANK-Modell
+- Trend 55-79
+
+CAPITAL_MARKETS
+- Trap 20-59 & DD 40-59
+- Qualität 55-69 & Entwicklung <=54
+
+ENERGY
+- Baseline U>=70 & E>=65
+
+START
+-----
+1. 01_SELFTEST_WALK_FORWARD_OOS.bat
+2. 02_RUN_WALK_FORWARD_OOS_FULL.bat
+
+AUSGABEN
+--------
+- TradePilot_WalkForward_Detail_0.8.10_*.csv
+- TradePilot_WalkForward_Verdicts_0.8.10_*.csv
+- TradePilot_WalkForward_Comparisons_0.8.10_*.csv
+
+VERDICTS
+--------
+PASS  = Validation positiv bei Mindeststichprobe und positiven Robustheitsmetriken.
+WATCH = Validation positiv, aber Robustheit/Mindeststichprobe nicht vollständig.
+FAIL  = Validation nicht ausreichend positiv oder zu klein.
+
+WICHTIG
+-------
+PASS ist keine Handelsfreigabe und keine wissenschaftliche Validierung.
+0.8.10 verändert keine Produktions-Scorelogik.
+Die Schwellen werden in diesem Test nicht optimiert.

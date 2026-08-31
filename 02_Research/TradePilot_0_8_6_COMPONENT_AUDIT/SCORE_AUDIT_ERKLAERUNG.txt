@@ -1,0 +1,32 @@
+WARUM DIE 0.6.2-KANDIDATEN?
+===========================
+
+0.6.1 hat sich als brauchbare Forschungsbasis erwiesen, aber die Aggregation hat zwei
+strukturelle Punkte, die wir testen sollten:
+
+1) Bewertung wirkt doppelt auf den Einstieg.
+   Sie ist bereits zu 25 % Teil des Unternehmensscores und danach nochmals direkt zu 20 %
+   Bestandteil des Einstiegsscores.
+
+2) Drawdown hat im Einstieg 40 % Gewicht.
+   Das ist absichtlich contrarian, kann aber "stark gefallen" zu stark belohnen.
+   Das Safety-Gate verhindert viele Falling-Knife-Fälle, trotzdem soll der große Test zeigen,
+   ob mehr Unternehmensqualität und Trend robuster sind.
+
+Daher testen wir zwei Kandidaten statt eine neue Formel voreilig festzuschreiben.
+
+ENTSCHEIDUNGSKRITERIEN
+======================
+Ein Kandidat wird NICHT wegen des höchsten 12M-Durchschnitts gewählt.
+Wir achten primär auf:
+- genügend vollständige 12M-Fälle
+- genügend verschiedene Aktien
+- genügend unabhängige Signal-Episoden
+- 12M-Median
+- Median-Alpha gegen SPY
+- Median-Alpha gegen Sektor-Benchmark
+- Positivquote
+- Anteil <= -20 %
+- Stabilität über STANDARD / BANK / CAPITAL_MARKETS / ENERGY
+
+Wenn keine 0.6.2-Variante robust besser ist, bleibt 0.6.1 bestehen.

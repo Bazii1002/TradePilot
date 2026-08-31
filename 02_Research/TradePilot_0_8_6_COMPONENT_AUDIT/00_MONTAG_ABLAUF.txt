@@ -1,0 +1,59 @@
+TRADEPILOT – MONTAG SCORE-AUDIT
+==============================
+
+ZIEL
+----
+0.6.1 bleibt die unveränderte Referenz.
+0.8.5 berechnet aus denselben historischen Rohdaten zusätzlich zwei 0.6.2-Kandidaten.
+Damit vergleichen wir fair auf 250, 350 und anschließend dem vollen S&P-500-Universum.
+
+VOR MONTAG
+----------
+Den kompletten Ordner nach
+C:\TradePilot\TradePilot_0_8_5_SCORE_AUDIT
+entpacken.
+
+Optional: vorhandenen backtest_cache aus 0.8.4 in diesen Ordner kopieren.
+Wenn kein Cache kopiert wird, baut 0.8.5 ihn beim ersten Lauf neu auf.
+
+MONTAG – REIHENFOLGE
+--------------------
+1. 01_SELFTEST.bat
+   Muss mit SCORE AUDIT SELFTEST: OK enden.
+
+2. 02_AUDIT_250.bat
+   Erster Haupttest. Danach NICHT gleich auf 350 gehen, wenn Fehler auftreten.
+
+3. Die erzeugte Datei
+   TradePilot_ScoreAudit_0.8.5_....csv
+   und/oder den kompletten Terminal-Output an ChatGPT schicken.
+
+4. Wenn 250 sauber und plausibel ist:
+   03_AUDIT_350.bat
+
+5. Wenn 350 sauber ist:
+   04_AUDIT_FULL.bat
+
+6. Optional danach:
+   05_AUDIT_FULL_CACHE.bat
+   Voller Lauf mit vollständig warmem Cache als Geschwindigkeitskontrolle.
+
+WAS WIRD VERGLICHEN?
+---------------------
+BASELINE_061
+  Unternehmensscore: Qualität 40 %, Entwicklung 35 %, Bewertung 25 %, Trap-Abzug 35 %
+  Einstieg: Unternehmen 25 %, Bewertung 20 %, Drawdown 40 %, Trend 15 %
+
+CANDIDATE_062_BALANCED
+  Unternehmensscore: Qualität 45 %, Entwicklung 40 %, Bewertung 15 %, Trap-Abzug 30 %
+  Einstieg: Unternehmen 35 %, Bewertung 10 %, Drawdown 30 %, Trend 25 %
+
+CANDIDATE_062_QUALITY
+  Unternehmensscore: Qualität 50 %, Entwicklung 40 %, Bewertung 10 %, Trap-Abzug 30 %
+  Einstieg: Unternehmen 40 %, Bewertung 5 %, Drawdown 25 %, Trend 30 %
+
+WICHTIG
+-------
+Die Komponenten selbst und das 0.6.1-Safety-Gate bleiben identisch.
+Wir ändern TradePilot 0.9.10 noch NICHT.
+Erst nach dem großen Vergleich wird entschieden, ob 0.6.2 übernommen wird.

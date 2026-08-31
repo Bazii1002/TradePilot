@@ -1,0 +1,66 @@
+TRADEPILOT 0.8.16 H1 ROBUSTNESS AUDIT
+=======================================
+
+ZIEL
+----
+Ausschließlich die bereits vor 0.8.15 eingefrorene H1-Regel stress-testen:
+
+0.6.1 Unternehmensscore >= 70
+UND
+0.6.1 Einstiegsscore >= 70
+
+WICHTIG
+-------
+0.8.16 testet KEINE alternativen Schwellen.
+Es wird NICHT geprüft, ob 69/70, 70/72, 75/70 usw. besser wären.
+
+DATENQUELLE
+-----------
+Automatisch die neueste Datei:
+C:\TradePilot\03_Research_Data\
+TradePilot_SECOND_HOLDOUT_Observations_0.8.15_*.csv
+
+PRÜFUNGEN
+---------
+1. Basis-Metriken H1
+2. Early/Late Split nach Stichtagen
+3. Kalenderjahre
+4. Pro Aktie nur erstes H1-Signal
+5. Leave-one-stock-out
+6. Ohne Top 1 / Top 3 / Top 5 Signale
+7. Ohne Top 1 / Top 3 Gewinner-Aktien
+8. Modellmix STANDARD/BANK/CAPITAL_MARKETS/ENERGY
+9. Alle Fälle mit 12M-Rendite <= -20 %
+
+ROBUSTNESS VERDICT
+------------------
+ROBUST_PASS:
+Die bereits bestätigte H1-Regel bleibt auch bei den vorab definierten
+Stressprüfungen stabil.
+
+ROBUST_WATCH:
+Basis bleibt stark, aber einzelne Robustheitsprüfungen brechen.
+
+ROBUST_FAIL:
+H1 ist unter den Stressprüfungen nicht stabil.
+
+Das ist weiterhin keine wissenschaftliche Validierung und keine
+Handelsfreigabe.
+
+START
+-----
+1. 01_SELFTEST_H1_ROBUSTNESS.bat
+2. 02_RUN_H1_ROBUSTNESS.bat
+
+OUTPUT
+------
+C:\TradePilot\03_Research_Data\
+TradePilot_H1_Robustness_Summary_0.8.16_*.csv
+TradePilot_H1_Time_Stability_0.8.16_*.csv
+TradePilot_H1_LeaveOneStockOut_0.8.16_*.csv
+TradePilot_H1_Outlier_Stress_0.8.16_*.csv
+TradePilot_H1_Model_Mix_0.8.16_*.csv
+TradePilot_H1_Loss_Cases_0.8.16_*.csv
+TradePilot_H1_Robustness_Audit_0.8.16_*.json
+
+Keine Produktions-Scorelogik wird verändert.

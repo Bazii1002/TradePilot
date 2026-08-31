@@ -1,0 +1,59 @@
+TRADEPILOT 0.8.11 TRUE HOLDOUT LOCK
+====================================
+
+ZIEL
+----
+0.8.11 ist bewusst KEIN neuer Backtest.
+Es friert vor dem echten externen Holdout-Test zwei Dinge ein:
+
+1. alle bisher im Research-Datensatz gesehenen Symbole
+2. alle aktuell ausgewählten Kandidatenregeln
+
+Dadurch können wir beim nächsten Schritt sicherstellen, dass ein externes
+Holdout-Universum keine bereits verwendeten Aktien enthält und dass die
+Schwellen nachträglich nicht mehr verändert werden.
+
+FESTER DATENPFAD
+----------------
+C:\TradePilot\03_Research_Data
+
+Dort muss die Full-CSV liegen:
+TradePilot_Backtest_0.8.5.1_SCORE_AUDIT_FIX_....csv
+
+START
+-----
+1. 01_SELFTEST_TRUE_HOLDOUT_LOCK.bat
+2. 02_CREATE_TRUE_HOLDOUT_LOCK.bat
+
+AUSGABEN
+--------
+TradePilot_0_8_11_HOLDOUT_LOCK.json
+TradePilot_0_8_11_SEEN_SYMBOLS.csv
+TradePilot_0_8_11_FROZEN_RULES.csv
+
+EINGEFRORENE HYPOTHESEN
+-----------------------
+STANDARD
+Recovery: Drawdown_Score >= 80 AND Bewertung <= 54
+
+BANK
+Baseline bleibt Referenz
+Trend 55-79 bleibt Bestätigungs-Kandidat
+
+CAPITAL_MARKETS
+Primär: Value_Trap 20-59 AND Drawdown_Score 40-59
+Sekundär: Qualitaet 55-69 AND Entwicklung <=54
+
+ENERGY
+Keine neue Regel
+
+WICHTIG
+-------
+Die bisherige S&P/current-universe-Full-CSV ist KEIN echter ungesehener
+Holdout mehr, weil sie bereits zur Regelentdeckung verwendet wurde.
+
+0.8.11 verhindert nur zukünftige Selection Leakage.
+Der nächste Schritt nach erfolgreichem Lock ist die Erzeugung eines
+externen Symbol-Universums, das keine der eingefrorenen Seen Symbols enthält.
+
+Keine Produktions-Scorelogik wird verändert.

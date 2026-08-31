@@ -1,0 +1,12 @@
+Nach 02_INTERACTION_AUDIT_FULL.bat bitte am besten:
+
+1. komplette Terminal-Ausgabe, oder
+2. diese drei CSV-Dateien:
+   TradePilot_InteractionAudit_Cells_0.8.7_....csv
+   TradePilot_InteractionAudit_SweetSpots_0.8.7_....csv
+   TradePilot_InteractionAudit_Shortlist_0.8.7_....csv
+
+Wichtig sind besonders die Abschnitte:
+- MODELL-BASISLINIEN 12M
+- SWEET-SPOT TESTS
+- TOP INTERAKTIONSZELLEN

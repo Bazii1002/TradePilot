@@ -1,0 +1,90 @@
+TRADEPILOT 0.8.15 SECOND TRUE HOLDOUT BACKTEST
+===============================================
+
+ZIEL
+----
+Der zweite echte Symbol-Holdout testet ausschließlich zwei VORHER
+eingefrorene Hypothesen auf 1.339 neuen Aktien.
+
+SECOND HOLDOUT
+--------------
+C:\TradePilot\03_Research_Data\
+TradePilot_Second_Holdout_Universe_0.8.14.csv
+
+Erwarteter Hash:
+63e1f6ca1d5a37bf2ef9ca0fe32134b69896bb52ec9c91f0cb6739fe3b458604
+
+0.8.15 verweigert die Vorbereitung, wenn:
+- der Second-Holdout-Hash verändert wurde
+- der 0.8.14 Lock fehlt oder nicht passt
+- der First-Holdout verändert wurde
+- ein Symbol aus Discovery/First Holdout im Second Holdout steckt
+
+EINGEFRORENE HYPOTHESEN
+-----------------------
+H1:
+0.6.1 Unternehmensscore >=70
+UND 0.6.1 Einstiegsscore >=70
+
+H2:
+CAPITAL_MARKETS
+Value_Trap 20-59
+UND Drawdown_Score 40-59
+
+WICHTIG
+-------
+0.8.15 sucht KEINE weiteren Schwellen.
+Keine Schwellenmatrix wird erzeugt.
+Kein "besserer" Cutoff wird nachträglich gesucht.
+
+REFERENZEN
+----------
+Nur zwei breite Referenzen werden gezeigt:
+- alle Second-Holdout-Beobachtungen
+- gesamtes CAPITAL_MARKETS-Modell
+
+Sie dienen nicht zur Schwellenoptimierung.
+
+PASS
+----
+Vorab festgelegt:
+- n >= 20
+- >=10 Aktien
+- >=10 Episoden
+- Median Alpha >0
+- Episoden-Alpha >0
+- aktiengewichteter Alpha >0
+- <=-20%-Quote <=20%
+
+WATCH:
+n>=5 + positiver Median-Alpha bei zu kleiner Stichprobe.
+
+FAIL:
+sonst.
+
+START
+-----
+1. 01_SELFTEST_SECOND_HOLDOUT_BACKTEST.bat
+2. 02_RUN_SECOND_HOLDOUT_BACKTEST.bat
+
+Der erste Lauf mit 1.339 Aktien kann länger dauern.
+Cache:
+C:\TradePilot\03_Research_Data\holdout_cache_0_8_15
+
+03_RUN_SECOND_HOLDOUT_REFRESH.bat nur bei bewusstem kompletten Refresh.
+
+OUTPUT
+------
+C:\TradePilot\03_Research_Data\
+TradePilot_SECOND_HOLDOUT_Results_0.8.15_*.csv
+TradePilot_SECOND_HOLDOUT_Observations_0.8.15_*.csv
+TradePilot_SECOND_HOLDOUT_Audit_0.8.15_*.json
+
+METHODISCHE GRENZEN
+-------------------
+- Current-membership / Survivorship Bias
+- gleiche historische Marktperioden können weiterhin überlappen
+- Yahoo-Fundamentals nicht vollständig revisionssicher point-in-time
+- Symbol-Replikation ist stärkere Evidenz, aber kein wissenschaftlicher Beweis
+
+Keine Produktions-Scorelogik wird verändert.

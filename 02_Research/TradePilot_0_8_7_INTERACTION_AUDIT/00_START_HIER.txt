@@ -1,0 +1,43 @@
+TRADEPILOT 0.8.7 INTERACTION AUDIT
+==================================
+
+ZIEL
+0.8.7 verändert KEINE Scorelogik. Es prüft, ob Kombinationen der 0.6.1-Rohkomponenten
+mehr Aussagekraft besitzen als die Einzelkomponenten aus 0.8.6.
+
+GEPRÜFTE INTERAKTIONEN
+- Drawdown_Score x Trend
+- Drawdown_Score x Qualitaet
+- Drawdown_Score x Bewertung
+- Bewertung x Qualitaet
+- Qualitaet x Entwicklung
+- Value_Trap x Drawdown_Score
+
+ZUSÄTZLICHE SWEET-SPOT-TESTS
+u.a. DD>=80 + Trend 55-79, DD>=80 + Bewertung>=55, DD>=80 + Qualitaet>=70,
+Bewertung>=55 + Qualitaet>=70 sowie Value-Trap/Drawdown-Kombinationen.
+
+WICHTIG
+Die Full-Beobachtungs-CSV aus 0.8.5.1 wird NICHT mitgeliefert.
+Das Script sucht sie automatisch in:
+1. diesem 0.8.7-Ordner
+2. C:\TradePilot\TradePilot_0_8_6_COMPONENT_AUDIT
+3. C:\TradePilot\TradePilot_0_8_5_1_SCORE_AUDIT_FIX
+
+ABLAUF
+1. ZIP nach C:\TradePilot entpacken.
+2. Öffne C:\TradePilot\TradePilot_0_8_7_INTERACTION_AUDIT
+3. 01_SELFTEST_INTERACTION_AUDIT.bat starten.
+4. Erwartet: TradePilot 0.8.7 INTERACTION AUDIT SELFTEST: OK
+5. Danach 02_INTERACTION_AUDIT_FULL.bat starten.
+6. Die komplette Terminal-Ausgabe an ChatGPT schicken.
+
+AUSGABEDATEIEN
+- TradePilot_InteractionAudit_Cells_0.8.7_....csv
+- TradePilot_InteractionAudit_SweetSpots_0.8.7_....csv
+- TradePilot_InteractionAudit_Shortlist_0.8.7_....csv
+
+STICHPROBENFILTER
+Eine Zelle wird als Stichprobe_OK markiert, wenn mindestens
+20 vollständige 12M-Fälle, 10 Aktien und 10 Episoden vorhanden sind.
+Das ist KEINE wissenschaftliche Signifikanzprüfung, sondern nur ein Mindestfilter.
