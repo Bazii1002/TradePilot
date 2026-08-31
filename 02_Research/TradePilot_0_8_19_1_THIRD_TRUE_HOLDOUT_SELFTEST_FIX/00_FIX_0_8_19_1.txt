@@ -1,0 +1,7 @@
+TradePilot 0.8.19.1 SELFTEST FIX
+
+Korrigiert:
+- falscher Raw-Dateiname 0.8.15 -> 0.8.19 im Core
+- fehlerhafte Selftest-Pruefung auf nicht vorhandenen Literaltext third_holdout
+
+Forschungslogik, H1, Primary Endpoint und PASS/WATCH-Regeln unveraendert.

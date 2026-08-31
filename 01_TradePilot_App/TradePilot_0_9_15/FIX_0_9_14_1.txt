@@ -1,0 +1,3 @@
+TradePilot 0.9.14.1
+Fix: escaped QSS braces in themes.py so build_qss() no longer raises NameError at startup.
+Selftest now executes build_qss() for dark and light themes.

@@ -1,0 +1,55 @@
+﻿TRADEPILOT 0.8.17 H1 REGIME & DEPENDENCE AUDIT
+==================================================
+
+ZIEL
+----
+Dieser Schritt untersucht ausschließlich die bereits eingefrorene H1-Regel:
+    0.6.1 Unternehmensscore >= 70 UND Einstiegsscore >= 70
+
+Es werden KEINE alternativen Score-Schwellen gesucht und KEINE Produktionsgewichte geändert.
+0.8.17 ist KEIN neuer Holdout. Es analysiert erneut die 0.8.15-Second-Holdout-Beobachtungen,
+um Zeit-/Regime- und Mehrfachsignal-Abhängigkeiten besser zu verstehen.
+
+VORAUSSETZUNG
+-------------
+Unter C:\TradePilot_Research_Data muss eine Datei liegen:
+TradePilot_SECOND_HOLDOUT_Observations_0.8.15_*.csv
+
+ABLAUF
+------
+1. 01_SELFTEST_H1_REGIME_DEPENDENCE.bat starten.
+   Erwartet: alle Selftests OK.
+
+2. 02_RUN_H1_REGIME_DEPENDENCE.bat starten.
+   Beim ersten Lauf wird SPY-Historie über yfinance geladen und lokal unter
+   C:\TradePilot_Research_Data\TradePilot_SPY_Regime_History_0.8.17.csv gecacht.
+
+3. Nur falls die SPY-Historie bewusst neu geladen werden soll:
+   03_RUN_H1_REGIME_DEPENDENCE_REFRESH_SPY.bat
+
+FESTE REGIME-DEFINITION
+-----------------------
+BULL:
+  SPY Schlusskurs > SMA200 UND trailing 126 Handelstage >= +5 %
+
+BEAR:
+  SPY Schlusskurs < SMA200 UND trailing 126 Handelstage <= -5 %
+
+MIXED_SIDEWAYS:
+  alle übrigen Fälle
+
+Die Regime-Klassifikation verwendet nur Daten bis zum jeweiligen Signal-Stichtag.
+
+ABHÄNGIGKEITSPRÜFUNGEN
+----------------------
+- alle H1-Signale
+- nur erstes vollständiges H1-Signal je Aktie
+- nur letztes vollständiges H1-Signal je Aktie
+- maximal ein Signal je Aktie pro 12 Monate (frühester Anker, 365 Tage Cooldown)
+- maximal ein Signal je Aktie pro 18 Monate (frühester Anker, 548 Tage Cooldown)
+- zusätzlich getrennt nach Modell und Marktregime
+
+WICHTIG
+-------
+Auch ein gutes Ergebnis in 0.8.17 ist KEINE neue unabhängige Bestätigung.
+Die Produktionslogik bleibt unverändert, bis wir bewusst eine separate Entscheidung treffen.

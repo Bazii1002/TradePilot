@@ -1,0 +1,64 @@
+TRADEPILOT 0.8.18.1 THIRD HOLDOUT LOCK + UNIVERSE HASH FIX
+================================================
+
+Zweck
+-----
+0.8.18 betrachtet KEINE neuen Rendite-/Alpha-Ergebnisse.
+Es friert H1 und die Auswertungsregel fuer einen dritten, neuen Symbol-Holdout ein
+und baut danach regelblind ein neues Aktienuniversum.
+
+Eingefrorene H1-Regel
+---------------------
+Unternehmensscore >= 70 UND Einstiegsscore >= 70
+Keine alternative Score-Schwelle wird getestet.
+
+Primaerer Endpunkt fuer den spaeteren 0.8.19-Test
+-------------------------------------------------
+FIRST_SIGNAL_PER_STOCK, 12 Monate.
+PASS nur, wenn ALLE Bedingungen erfuellt sind:
+- mindestens 30 vollstaendige First-Signal-Faelle / Aktien
+- Median 12M-Rendite > 0
+- Median SPY-Alpha > 0
+- Median Sektor-Alpha > 0
+- Positivquote >= 55 %
+- Verlustquote <= -20 % hoechstens 20 %
+
+WATCH:
+- mindestens 15 First-Signal-Faelle
+- SPY-Alpha und Sektor-Alpha beide > 0
+- aber mindestens eine andere PASS-Bedingung nicht erfuellt
+
+FAIL: sonst.
+
+Raw-H1, Modelle und Marktregime sind nur SEKUNDAER/DIAGNOSTISCH.
+Aus ihnen darf nach 0.8.19 keine neue Schwelle fuer denselben Holdout gewaehlt werden.
+
+Third-Holdout-Universum
+-----------------------
+Quelle: offizielle NASDAQ Trader Symbol Directory Dateien:
+- nasdaqlisted.txt
+- otherlisted.txt
+
+Regelblinde Filter VOR jedem Ergebnis:
+- Test Issues ausgeschlossen
+- ETFs ausgeschlossen
+- offensichtliche Warrants, Units, Rights, Preferreds und Depositary-Preferreds ausgeschlossen
+- nur sauber normalisierbare Yahoo-Symbole
+- ALLE Symbole aus Discovery, First Holdout und Second Holdout ausgeschlossen
+- falls mehr als 1500 gueltige ungesehene Titel uebrig bleiben: deterministische SHA256-Auswahl
+  mit festem Seed TRADEPILOT-0.8.18-THIRD-HOLDOUT, damit der Lauf reproduzierbar ist.
+
+Ablauf
+------
+1) 01_SELFTEST_THIRD_HOLDOUT.bat
+2) 02_BUILD_THIRD_HOLDOUT.bat
+3) Ausgabe komplett an ChatGPT schicken.
+4) Noch KEINE Ergebnisse dieser Symbole ansehen. Erst 0.8.19 darf den Backtest ausfuehren.
+
+WICHTIG
+-------
+0.8.18 veraendert KEINE Produktions-Scorelogik.
+
+
+0.8.18.1 FIX:
+Die historischen First-/Second-Holdout-Hashes sind CSV-Datei-SHA256. 0.8.18 verglich sie irrtuemlich mit einem Symbolhash. 0.8.18.1 prueft wieder bytegenau wie 0.8.14/0.8.15.

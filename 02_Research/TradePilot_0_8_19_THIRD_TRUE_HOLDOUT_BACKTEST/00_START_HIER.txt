@@ -1,0 +1,19 @@
+TRADEPILOT 0.8.19 THIRD TRUE HOLDOUT
+
+Voraussetzung:
+- 0.8.18.1 wurde erfolgreich ausgeführt.
+- Third-Holdout-Hash: c8d73d22b9235e835f4567258dd01de716f3bd7231acb4ae853f0ea9d7c49953
+
+Eingefroren VOR Ergebnis:
+- H1: Unternehmensscore >=70 UND Einstiegsscore >=70
+- Primary Endpoint: FIRST_SIGNAL_PER_STOCK_12M
+- PASS: n>=30, Median 12M >0, Median SPY Alpha >0, Median Sektor Alpha >0, positive Rendite >=55%, <=-20% Quote <=20%
+- WATCH: n>=15 und beide Median-Alphas >0
+- Keine alternativen Score-Schwellen.
+
+Ablauf:
+1) 01_SELFTEST_THIRD_HOLDOUT_BACKTEST.bat
+2) 02_RUN_THIRD_HOLDOUT_BACKTEST.bat
+3) Ausgabe an ChatGPT schicken.
+
+03_RUN_THIRD_HOLDOUT_REFRESH.bat nur bei ausdrücklicher Fehlersuche verwenden.
