@@ -1,0 +1,320 @@
+{
+  "NVDA": {
+    "instrument_id": 1137,
+    "name": "NVDA"
+  },
+  "AMD": {
+    "instrument_id": 1832,
+    "name": "AMD"
+  },
+  "TSLA": {
+    "instrument_id": 1111,
+    "name": "TSLA"
+  },
+  "META": {
+    "instrument_id": 1003,
+    "name": "META"
+  },
+  "AMZN": {
+    "instrument_id": 1005,
+    "name": "AMZN"
+  },
+  "MSFT": {
+    "instrument_id": 1004,
+    "name": "MSFT"
+  },
+  "AAPL": {
+    "instrument_id": 1001,
+    "name": "AAPL"
+  },
+  "PLTR": {
+    "instrument_id": 7991,
+    "name": "PLTR"
+  },
+  "SPY": {
+    "instrument_id": 3000,
+    "name": "SPY"
+  },
+  "QQQ": {
+    "instrument_id": 3006,
+    "name": "QQQ"
+  },
+  "SAP.DE": {
+    "instrument_id": 1202,
+    "etoro_symbol": "SAP.DE",
+    "name": "SAP.DE"
+  },
+  "SIE.DE": {
+    "instrument_id": 1200,
+    "etoro_symbol": "SIE.DE",
+    "name": "SIE.DE"
+  },
+  "ALV.DE": {
+    "instrument_id": 1204,
+    "etoro_symbol": "ALV.DE",
+    "name": "ALV.DE"
+  },
+  "MBG.DE": {
+    "instrument_id": 1206,
+    "etoro_symbol": "MBG.DE",
+    "name": "MBG.DE"
+  },
+  "BMW.DE": {
+    "instrument_id": 1211,
+    "etoro_symbol": "BMW.DE",
+    "name": "BMW.DE"
+  },
+  "DTE.DE": {
+    "instrument_id": 1207,
+    "etoro_symbol": "DTE.DE",
+    "name": "DTE.DE"
+  },
+  "ASML.NV": {
+    "instrument_id": 4509,
+    "etoro_symbol": "ASML.NV",
+    "name": "ASML.NV"
+  },
+  "AIR.PA": {
+    "instrument_id": 1234,
+    "etoro_symbol": "AIR.PA",
+    "name": "AIR.PA"
+  },
+  "MC.PA": {
+    "instrument_id": 1253,
+    "etoro_symbol": "MC.PA",
+    "name": "MC.PA"
+  },
+  "NOVO-B.CO": {
+    "instrument_id": 2260,
+    "etoro_symbol": "NOVO-B.CO",
+    "name": "NOVO-B.CO"
+  },
+  "BTC": {
+    "instrument_id": 100000,
+    "etoro_symbol": "BTC"
+  },
+  "ETH": {
+    "instrument_id": 100001,
+    "etoro_symbol": "ETH"
+  },
+  "SOL": {
+    "instrument_id": 100063,
+    "etoro_symbol": "SOL"
+  },
+  "GOOGL": {
+    "instrument_id": 6434,
+    "etoro_symbol": "GOOGL"
+  },
+  "GOOG": {
+    "instrument_id": 1002,
+    "etoro_symbol": "GOOG"
+  },
+  "AVGO": {
+    "instrument_id": 4236,
+    "etoro_symbol": "AVGO"
+  },
+  "ORCL": {
+    "instrument_id": 1135,
+    "etoro_symbol": "ORCL"
+  },
+  "CRM": {
+    "instrument_id": 1839,
+    "etoro_symbol": "CRM"
+  },
+  "ADBE": {
+    "instrument_id": 1126,
+    "etoro_symbol": "ADBE"
+  },
+  "INTC": {
+    "instrument_id": 1021,
+    "etoro_symbol": "INTC"
+  },
+  "QCOM": {
+    "instrument_id": 1485,
+    "etoro_symbol": "QCOM"
+  },
+  "MU": {
+    "instrument_id": 1130,
+    "etoro_symbol": "MU"
+  },
+  "AMAT": {
+    "instrument_id": 1706,
+    "etoro_symbol": "AMAT"
+  },
+  "LRCX": {
+    "instrument_id": 1906,
+    "etoro_symbol": "LRCX"
+  },
+  "PANW": {
+    "instrument_id": 4124,
+    "etoro_symbol": "PANW"
+  },
+  "CRWD": {
+    "instrument_id": 5506,
+    "etoro_symbol": "CRWD"
+  },
+  "NFLX": {
+    "instrument_id": 1127,
+    "etoro_symbol": "NFLX"
+  },
+  "UBER": {
+    "instrument_id": 1186,
+    "etoro_symbol": "UBER"
+  },
+  "SHOP": {
+    "instrument_id": 4148,
+    "etoro_symbol": "SHOP"
+  },
+  "PYPL": {
+    "instrument_id": 1484,
+    "etoro_symbol": "PYPL"
+  },
+  "JPM": {
+    "instrument_id": 1023,
+    "etoro_symbol": "JPM"
+  },
+  "BAC": {
+    "instrument_id": 1011,
+    "etoro_symbol": "BAC"
+  },
+  "GS": {
+    "instrument_id": 1467,
+    "etoro_symbol": "GS"
+  },
+  "V": {
+    "instrument_id": 1046,
+    "etoro_symbol": "V"
+  },
+  "MA": {
+    "instrument_id": 1041,
+    "etoro_symbol": "MA"
+  },
+  "WMT": {
+    "instrument_id": 1035,
+    "etoro_symbol": "WMT"
+  },
+  "COST": {
+    "instrument_id": 1461,
+    "etoro_symbol": "COST"
+  },
+  "HD": {
+    "instrument_id": 1018,
+    "etoro_symbol": "HD"
+  },
+  "MCD": {
+    "instrument_id": 1025,
+    "etoro_symbol": "MCD"
+  },
+  "KO": {
+    "instrument_id": 1024,
+    "etoro_symbol": "KO"
+  },
+  "PEP": {
+    "instrument_id": 1043,
+    "etoro_symbol": "PEP"
+  },
+  "DIS": {
+    "instrument_id": 1016,
+    "etoro_symbol": "DIS"
+  },
+  "NKE": {
+    "instrument_id": 1042,
+    "etoro_symbol": "NKE"
+  },
+  "BA": {
+    "instrument_id": 1010,
+    "etoro_symbol": "BA"
+  },
+  "CAT": {
+    "instrument_id": 1012,
+    "etoro_symbol": "CAT"
+  },
+  "GE": {
+    "instrument_id": 1017,
+    "etoro_symbol": "GE"
+  },
+  "XOM": {
+    "instrument_id": 1036,
+    "etoro_symbol": "XOM"
+  },
+  "CVX": {
+    "instrument_id": 100512,
+    "etoro_symbol": "CVX"
+  },
+  "LLY": {
+    "instrument_id": 1567,
+    "etoro_symbol": "LLY"
+  },
+  "JNJ": {
+    "instrument_id": 1022,
+    "etoro_symbol": "JNJ"
+  },
+  "UNH": {
+    "instrument_id": 1032,
+    "etoro_symbol": "UNH"
+  },
+  "ABBV": {
+    "instrument_id": 1452,
+    "etoro_symbol": "ABBV"
+  },
+  "MRK": {
+    "instrument_id": 1027,
+    "etoro_symbol": "MRK"
+  },
+  "PFE": {
+    "instrument_id": 1028,
+    "etoro_symbol": "PFE"
+  },
+  "ADS.DE": {
+    "instrument_id": 1215,
+    "etoro_symbol": "ADS.DE"
+  },
+  "BAS.DE": {
+    "instrument_id": 1201,
+    "etoro_symbol": "BAS.DE"
+  },
+  "BAYN.DE": {
+    "instrument_id": 1203,
+    "etoro_symbol": "BAYN.DE"
+  },
+  "DBK.DE": {
+    "instrument_id": 1995,
+    "etoro_symbol": "DBK.DE"
+  },
+  "DHL.DE": {
+    "instrument_id": 1216,
+    "etoro_symbol": "DHL.DE"
+  },
+  "RWE.DE": {
+    "instrument_id": 1213,
+    "etoro_symbol": "RWE.DE"
+  },
+  "VOW3.DE": {
+    "instrument_id": 1210,
+    "etoro_symbol": "VOW3.DE"
+  },
+  "IFX.DE": {
+    "instrument_id": 1221,
+    "etoro_symbol": "IFX.DE"
+  },
+  "OR.PA": {
+    "instrument_id": 1256,
+    "etoro_symbol": "OR.PA"
+  },
+  "SU.PA": {
+    "instrument_id": 1265,
+    "etoro_symbol": "SU.PA"
+  },
+  "TTE.PA": {
+    "instrument_id": 1246,
+    "etoro_symbol": "TTE.PA"
+  },
+  "BNP.PA": {
+    "instrument_id": 1238,
+    "etoro_symbol": "BNP.PA"
+  },
+  "MS": {
+    "instrument_id": 1976,
+    "etoro_symbol": "MS"
+  }
+}

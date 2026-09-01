@@ -1,0 +1,11 @@
+{
+  "strategy_level": 1,
+  "max_trades_per_day": 5,
+  "max_invested_usd": 500.0,
+  "position_size_usd": 100.0,
+  "max_total_positions": 3,
+  "bot_enabled": false,
+  "run_interval_minutes": 5,
+  "trading_mode": "REAL",
+  "theme": "dark"
+}
