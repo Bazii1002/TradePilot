@@ -1,0 +1,4 @@
+{"ts":"2026-09-01T15:33:41.848279+02:00","event":"RECONCILE","broker_positions":0,"broker_position_ids":[],"local_position_ids":[],"orphan_broker":[],"stale_local":[],"uncertain_lock":false,"uncertain_safe_to_clear":false}
+{"ts":"2026-09-01T15:33:42.803867+02:00","event":"PREFLIGHT_BUY","symbol":"FRHC","instrument_id":8973,"budget_eur":10.0}
+{"ts":"2026-09-01T15:36:00.955594+02:00","event":"RECONCILE","broker_positions":0,"broker_position_ids":[],"local_position_ids":[],"orphan_broker":[],"stale_local":[],"uncertain_lock":false,"uncertain_safe_to_clear":false}
+{"ts":"2026-09-01T15:36:02.178338+02:00","event":"PREFLIGHT_BUY","symbol":"GIS","instrument_id":1585,"budget_eur":10.0}

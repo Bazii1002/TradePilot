@@ -1,0 +1,3 @@
+@echo off
+python 23_TEST_FINAL_SIGNAL_QUALITY_GATE_OFFLINE.py
+pause

@@ -1,0 +1,96 @@
+{
+  "updated_at": "2026-09-01T15:33:33.111360+00:00",
+  "snapshot": {
+    "risk": "LOW",
+    "regime": "NEUTRAL",
+    "confidence": 100,
+    "allow_new_trade": true,
+    "position_multiplier": 1.0,
+    "reason": "Keine unmittelbar kritische Makrobelastung erkannt",
+    "next_event": {
+      "event_name": "Nonfarm Payrolls (Employment Situation)",
+      "country": "—",
+      "importance_source": "high",
+      "relevance": "CRITICAL",
+      "semantic": "context_dependent",
+      "scheduled_at": "2026-09-04T12:30:00+00:00",
+      "source": "bls",
+      "forecast": null,
+      "previous": null,
+      "actual": null,
+      "surprise": {
+        "available": false,
+        "raw": null,
+        "direction": "UNKNOWN",
+        "text": "Actual/Forecast noch nicht vollständig"
+      },
+      "minutes_to_event": 4136.4
+    },
+    "upcoming": [
+      {
+        "event_name": "Nonfarm Payrolls (Employment Situation)",
+        "country": "—",
+        "importance_source": "high",
+        "relevance": "CRITICAL",
+        "semantic": "context_dependent",
+        "scheduled_at": "2026-09-04T12:30:00+00:00",
+        "source": "bls",
+        "forecast": null,
+        "previous": null,
+        "actual": null,
+        "surprise": {
+          "available": false,
+          "raw": null,
+          "direction": "UNKNOWN",
+          "text": "Actual/Forecast noch nicht vollständig"
+        },
+        "minutes_to_event": 4136.4
+      },
+      {
+        "event_name": "CPI (Consumer Price Index)",
+        "country": "—",
+        "importance_source": "high",
+        "relevance": "CRITICAL",
+        "semantic": "higher_is_risk_off",
+        "scheduled_at": "2026-09-11T12:30:00+00:00",
+        "source": "bls",
+        "forecast": null,
+        "previous": null,
+        "actual": null,
+        "surprise": {
+          "available": false,
+          "raw": null,
+          "direction": "UNKNOWN",
+          "text": "Actual/Forecast noch nicht vollständig"
+        },
+        "minutes_to_event": 14216.4
+      }
+    ],
+    "recent": [],
+    "market": {
+      "moves": {
+        "NASDAQ": 0.13,
+        "S&P 500": 0.07,
+        "VIX": 0.59,
+        "US10Y": -0.2,
+        "OIL": 0.46
+      },
+      "regime": "NEUTRAL",
+      "score": 0.32,
+      "confidence": 100,
+      "complete": true
+    },
+    "data_ok": true,
+    "calendar_meta": {
+      "ok": true,
+      "stale": false,
+      "source": "live",
+      "providers": 1,
+      "raw_count": 2,
+      "event_count": 2,
+      "errors": [],
+      "updated_at": "2026-09-01T15:33:28.505101+00:00",
+      "horizon_days": 14
+    }
+  }
+}

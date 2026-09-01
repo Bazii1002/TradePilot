@@ -1,0 +1,690 @@
+[
+  {
+    "symbol": "AAPL",
+    "name": "Apple",
+    "market": "US",
+    "aliases": [
+      "AAPL"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft",
+    "market": "US",
+    "aliases": [
+      "MSFT"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA",
+    "market": "US",
+    "aliases": [
+      "NVDA"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "AMZN",
+    "name": "Amazon",
+    "market": "US",
+    "aliases": [
+      "AMZN"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "META",
+    "name": "Meta",
+    "market": "US",
+    "aliases": [
+      "META"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Alphabet A",
+    "market": "US",
+    "aliases": [
+      "GOOGL"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "GOOG",
+    "name": "Alphabet C",
+    "market": "US",
+    "aliases": [
+      "GOOG"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "TSLA",
+    "name": "Tesla",
+    "market": "US",
+    "aliases": [
+      "TSLA"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "AMD",
+    "name": "AMD",
+    "market": "US",
+    "aliases": [
+      "AMD"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "AVGO",
+    "name": "Broadcom",
+    "market": "US",
+    "aliases": [
+      "AVGO"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ORCL",
+    "name": "Oracle",
+    "market": "US",
+    "aliases": [
+      "ORCL"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "CRM",
+    "name": "Salesforce",
+    "market": "US",
+    "aliases": [
+      "CRM"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ADBE",
+    "name": "Adobe",
+    "market": "US",
+    "aliases": [
+      "ADBE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "INTC",
+    "name": "Intel",
+    "market": "US",
+    "aliases": [
+      "INTC"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "QCOM",
+    "name": "Qualcomm",
+    "market": "US",
+    "aliases": [
+      "QCOM"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MU",
+    "name": "Micron",
+    "market": "US",
+    "aliases": [
+      "MU"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "AMAT",
+    "name": "Applied Materials",
+    "market": "US",
+    "aliases": [
+      "AMAT"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "LRCX",
+    "name": "Lam Research",
+    "market": "US",
+    "aliases": [
+      "LRCX"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "PANW",
+    "name": "Palo Alto Networks",
+    "market": "US",
+    "aliases": [
+      "PANW"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "CRWD",
+    "name": "CrowdStrike",
+    "market": "US",
+    "aliases": [
+      "CRWD"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "PLTR",
+    "name": "Palantir",
+    "market": "US",
+    "aliases": [
+      "PLTR"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix",
+    "market": "US",
+    "aliases": [
+      "NFLX"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "UBER",
+    "name": "Uber",
+    "market": "US",
+    "aliases": [
+      "UBER"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "SHOP",
+    "name": "Shopify",
+    "market": "US",
+    "aliases": [
+      "SHOP"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "PYPL",
+    "name": "PayPal",
+    "market": "US",
+    "aliases": [
+      "PYPL"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "JPM",
+    "name": "JPMorgan",
+    "market": "US",
+    "aliases": [
+      "JPM"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BAC",
+    "name": "Bank of America",
+    "market": "US",
+    "aliases": [
+      "BAC"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "GS",
+    "name": "Goldman Sachs",
+    "market": "US",
+    "aliases": [
+      "GS"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MS",
+    "name": "Morgan Stanley",
+    "market": "US",
+    "aliases": [
+      "MS"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "V",
+    "name": "Visa",
+    "market": "US",
+    "aliases": [
+      "V"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MA",
+    "name": "Mastercard",
+    "market": "US",
+    "aliases": [
+      "MA"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "WMT",
+    "name": "Walmart",
+    "market": "US",
+    "aliases": [
+      "WMT"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "COST",
+    "name": "Costco",
+    "market": "US",
+    "aliases": [
+      "COST"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "HD",
+    "name": "Home Depot",
+    "market": "US",
+    "aliases": [
+      "HD"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MCD",
+    "name": "McDonald's",
+    "market": "US",
+    "aliases": [
+      "MCD"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "KO",
+    "name": "Coca-Cola",
+    "market": "US",
+    "aliases": [
+      "KO"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "PEP",
+    "name": "PepsiCo",
+    "market": "US",
+    "aliases": [
+      "PEP"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "DIS",
+    "name": "Disney",
+    "market": "US",
+    "aliases": [
+      "DIS"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "NKE",
+    "name": "Nike",
+    "market": "US",
+    "aliases": [
+      "NKE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BA",
+    "name": "Boeing",
+    "market": "US",
+    "aliases": [
+      "BA"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "CAT",
+    "name": "Caterpillar",
+    "market": "US",
+    "aliases": [
+      "CAT"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "GE",
+    "name": "GE Aerospace",
+    "market": "US",
+    "aliases": [
+      "GE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "XOM",
+    "name": "Exxon Mobil",
+    "market": "US",
+    "aliases": [
+      "XOM"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "CVX",
+    "name": "Chevron",
+    "market": "US",
+    "aliases": [
+      "CVX"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "LLY",
+    "name": "Eli Lilly",
+    "market": "US",
+    "aliases": [
+      "LLY"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "JNJ",
+    "name": "Johnson & Johnson",
+    "market": "US",
+    "aliases": [
+      "JNJ"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "UNH",
+    "name": "UnitedHealth",
+    "market": "US",
+    "aliases": [
+      "UNH"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ABBV",
+    "name": "AbbVie",
+    "market": "US",
+    "aliases": [
+      "ABBV"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MRK",
+    "name": "Merck",
+    "market": "US",
+    "aliases": [
+      "MRK"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "PFE",
+    "name": "Pfizer",
+    "market": "US",
+    "aliases": [
+      "PFE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "SPY",
+    "name": "S&P 500 ETF",
+    "market": "US",
+    "aliases": [
+      "SPY"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "QQQ",
+    "name": "Nasdaq 100 ETF",
+    "market": "US",
+    "aliases": [
+      "QQQ"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "SAP.DE",
+    "name": "SAP",
+    "market": "EU",
+    "aliases": [
+      "SAP.DE",
+      "SAP"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "SIE.DE",
+    "name": "Siemens",
+    "market": "EU",
+    "aliases": [
+      "SIE.DE",
+      "SIE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ALV.DE",
+    "name": "Allianz",
+    "market": "EU",
+    "aliases": [
+      "ALV.DE",
+      "ALV"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MBG.DE",
+    "name": "Mercedes-Benz",
+    "market": "EU",
+    "aliases": [
+      "MBG.DE",
+      "MBG"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BMW.DE",
+    "name": "BMW",
+    "market": "EU",
+    "aliases": [
+      "BMW.DE",
+      "BMW"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "DTE.DE",
+    "name": "Deutsche Telekom",
+    "market": "EU",
+    "aliases": [
+      "DTE.DE",
+      "DTE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ADS.DE",
+    "name": "Adidas",
+    "market": "EU",
+    "aliases": [
+      "ADS.DE",
+      "ADS"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BAS.DE",
+    "name": "BASF",
+    "market": "EU",
+    "aliases": [
+      "BAS.DE",
+      "BAS"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BAYN.DE",
+    "name": "Bayer",
+    "market": "EU",
+    "aliases": [
+      "BAYN.DE",
+      "BAYN"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "DBK.DE",
+    "name": "Deutsche Bank",
+    "market": "EU",
+    "aliases": [
+      "DBK.DE",
+      "DBK"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "DHL.DE",
+    "name": "DHL Group",
+    "market": "EU",
+    "aliases": [
+      "DHL.DE",
+      "DHL"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "RWE.DE",
+    "name": "RWE",
+    "market": "EU",
+    "aliases": [
+      "RWE.DE",
+      "RWE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "VOW3.DE",
+    "name": "Volkswagen",
+    "market": "EU",
+    "aliases": [
+      "VOW3.DE",
+      "VOW3"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "IFX.DE",
+    "name": "Infineon",
+    "market": "EU",
+    "aliases": [
+      "IFX.DE",
+      "IFX"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "ASML.NV",
+    "name": "ASML",
+    "market": "EU",
+    "aliases": [
+      "ASML.NV",
+      "ASML"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "AIR.PA",
+    "name": "Airbus",
+    "market": "EU",
+    "aliases": [
+      "AIR.PA",
+      "AIR"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "MC.PA",
+    "name": "LVMH",
+    "market": "EU",
+    "aliases": [
+      "MC.PA",
+      "MC"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "OR.PA",
+    "name": "L'Oreal",
+    "market": "EU",
+    "aliases": [
+      "OR.PA",
+      "OR"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "SU.PA",
+    "name": "Schneider Electric",
+    "market": "EU",
+    "aliases": [
+      "SU.PA",
+      "SU"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "TTE.PA",
+    "name": "TotalEnergies",
+    "market": "EU",
+    "aliases": [
+      "TTE.PA",
+      "TTE"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "BNP.PA",
+    "name": "BNP Paribas",
+    "market": "EU",
+    "aliases": [
+      "BNP.PA",
+      "BNP"
+    ],
+    "enabled": true
+  },
+  {
+    "symbol": "NOVO-B.CO",
+    "name": "Novo Nordisk",
+    "market": "EU",
+    "aliases": [
+      "NOVO-B.CO",
+      "NOVO-B"
+    ],
+    "enabled": true
+  }
+]

@@ -1,0 +1,3 @@
+@echo off
+python 31_TEST_ACTIONABLE_TO_REAL_PREFLIGHT_NO_POST.py
+pause

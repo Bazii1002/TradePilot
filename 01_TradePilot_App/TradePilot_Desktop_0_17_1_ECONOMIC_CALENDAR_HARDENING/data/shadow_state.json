@@ -1,0 +1,20 @@
+{
+  "level": 1,
+  "scan_count": 2,
+  "positions": [],
+  "trades": [],
+  "events": [
+    {
+      "time": "17:35:56",
+      "text": "Bot gestartet \u00b7 echte Signal-Engine \u00b7 FAST"
+    },
+    {
+      "time": "17:33:54",
+      "text": "Neue Strategie f\u00fcr neue Trades: 1 FAST"
+    }
+  ],
+  "paper_cash": 1000.0,
+  "paper_equity": 1000.0,
+  "pnl": 0.0,
+  "cycle": 2
+}

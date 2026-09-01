@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "transport": "NO_POST_SIMULATED_BROKER",
+  "symbol": "AAPL",
+  "instrument_id": 1001,
+  "budget_eur": 10.0,
+  "amount_usd": 11.6,
+  "strategy": "DAY",
+  "buy_payload_preview": {
+    "action": "open",
+    "transaction": "buy",
+    "instrumentId": 1001,
+    "orderType": "mkt",
+    "amount": 11.6,
+    "orderCurrency": "usd",
+    "leverage": 1
+  },
+  "simulated_position_id": "SIM-1788267264501",
+  "buy_reconcile_ok": true,
+  "close_payload_preview": {
+    "positionId": "SIM-1788267264501",
+    "mode": "FULL_CLOSE"
+  },
+  "close_reconcile_ok": true,
+  "final_broker_positions": 0,
+  "final_local_positions": 0,
+  "real_post_executed": false
+}

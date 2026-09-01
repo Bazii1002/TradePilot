@@ -1,0 +1,16 @@
+{
+  "FRHC": {
+    "instrumentId": 8973,
+    "symbol": "FRHC",
+    "displayName": "FRHC",
+    "source": "market_data_search",
+    "cachedAt": 1788269622
+  },
+  "GIS": {
+    "instrumentId": 1585,
+    "symbol": "GIS",
+    "displayName": "GIS",
+    "source": "market_data_search",
+    "cachedAt": 1788269761
+  }
+}

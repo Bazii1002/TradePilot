@@ -1,0 +1,14 @@
+{
+  "symbols": {
+    "HEIA": {
+      "fail_count": 2,
+      "last_failure": 1788269754.9850633,
+      "reason": "no_price_data"
+    },
+    "UHALB": {
+      "fail_count": 2,
+      "last_failure": 1788269754.9874427,
+      "reason": "no_price_data"
+    }
+  }
+}

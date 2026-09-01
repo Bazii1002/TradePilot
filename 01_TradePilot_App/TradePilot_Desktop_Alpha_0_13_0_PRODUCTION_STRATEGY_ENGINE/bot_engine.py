@@ -1,0 +1,288 @@
+from __future__ import annotations
+
+import json
+import threading
+from datetime import datetime
+from pathlib import Path
+
+from PySide6.QtCore import QObject, Property, QTimer, Signal, Slot
+
+from strategy_engine import DEFAULT_UNIVERSE, ProductionStrategyEngine, STRATEGIES
+
+
+class BotEngine(QObject):
+    changed = Signal()
+    scanFinished = Signal(object, str)
+
+    def __init__(self, app_dir: Path):
+        super().__init__()
+        self.app_dir = Path(app_dir)
+        self.data_dir = self.app_dir / "data"
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.state_file = self.data_dir / "shadow_state.json"
+        self.strategy = ProductionStrategyEngine()
+        self._running = False
+        self._scan_busy = False
+        self._level = 2
+        self._scan_count = 0
+        self._last_scan = "Noch kein Scan"
+        self._next_scan = "—"
+        self._status = "STOPPED"
+        self._last_action = "Bot wartet auf Start"
+        self._market_rows = []
+        self._positions = []
+        self._trades = []
+        self._events = []
+        self._paper_cash = 1000.0
+        self._paper_equity = 1000.0
+        self._pnl = 0.0
+        self._max_positions = 3
+        self._trade_size = 10.0
+        self._cycle = 0
+        self._load_state()
+
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self._request_scan)
+        self.scanFinished.connect(self._apply_scan)
+        self._apply_interval()
+
+    def _apply_interval(self):
+        self.timer.setInterval(int(STRATEGIES[self._level]["scan_seconds"]) * 1000)
+
+    def _log(self, text: str):
+        stamp = datetime.now().strftime("%H:%M:%S")
+        self._events.insert(0, {"time": stamp, "text": text})
+        self._events = self._events[:80]
+
+    def _save_state(self):
+        payload = {
+            "level": self._level, "scan_count": self._scan_count,
+            "positions": self._positions, "trades": self._trades[-300:],
+            "events": self._events[:80], "paper_cash": self._paper_cash,
+            "paper_equity": self._paper_equity, "pnl": self._pnl, "cycle": self._cycle,
+        }
+        try:
+            tmp = self.state_file.with_suffix(".tmp")
+            tmp.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+            tmp.replace(self.state_file)
+        except Exception:
+            pass
+
+    def _load_state(self):
+        if not self.state_file.exists():
+            return
+        try:
+            p = json.loads(self.state_file.read_text(encoding="utf-8"))
+            lvl = int(p.get("level", self._level))
+            self._level = lvl if lvl in STRATEGIES else 2
+            self._scan_count = int(p.get("scan_count", 0))
+            self._positions = list(p.get("positions") or [])
+            self._trades = list(p.get("trades") or [])
+            self._events = list(p.get("events") or [])
+            self._paper_cash = float(p.get("paper_cash", 1000.0))
+            self._paper_equity = float(p.get("paper_equity", 1000.0))
+            self._pnl = float(p.get("pnl", 0.0))
+            self._cycle = int(p.get("cycle", 0))
+        except Exception:
+            pass
+
+    @Property(bool, notify=changed)
+    def running(self): return self._running
+    @Property(str, notify=changed)
+    def statusText(self): return self._status
+    @Property(str, notify=changed)
+    def levelName(self): return STRATEGIES[self._level]["name"]
+    @Property(int, notify=changed)
+    def level(self): return self._level
+    @Property(str, notify=changed)
+    def lastScanText(self): return self._last_scan
+    @Property(str, notify=changed)
+    def nextScanText(self): return self._next_scan
+    @Property(int, notify=changed)
+    def scanCount(self): return self._scan_count
+    @Property(int, notify=changed)
+    def openPositions(self): return len(self._positions)
+    @Property(int, notify=changed)
+    def tradeCount(self): return len(self._trades)
+    @Property(str, notify=changed)
+    def lastActionText(self): return self._last_action
+    @Property(str, notify=changed)
+    def paperCashText(self): return f"${self._paper_cash:,.2f}"
+    @Property(str, notify=changed)
+    def paperEquityText(self): return f"${self._paper_equity:,.2f}"
+    @Property(str, notify=changed)
+    def pnlText(self):
+        sign = "+" if self._pnl > 0 else ""
+        return f"{sign}${self._pnl:,.2f}"
+    @Property(str, notify=changed)
+    def marketRowsJson(self): return json.dumps(self._market_rows)
+    @Property(str, notify=changed)
+    def positionsJson(self): return json.dumps(self._positions)
+    @Property(str, notify=changed)
+    def tradesJson(self): return json.dumps(list(reversed(self._trades[-120:])))
+    @Property(str, notify=changed)
+    def eventsJson(self): return json.dumps(self._events)
+    @Property(str, notify=changed)
+    def modeText(self): return "SHADOW · PRODUCTION SIGNALS"
+    @Property(str, notify=changed)
+    def realLockText(self): return "REAL AUTOTRADING LOCKED"
+
+    @Slot()
+    def startBot(self):
+        if self._running:
+            return
+        self._running = True
+        self._status = "RUNNING"
+        self._log(f"Bot gestartet · echte Signal-Engine · {self.levelName}")
+        self._apply_interval()
+        self.timer.start()
+        self._request_scan()
+        self.changed.emit()
+
+    @Slot()
+    def stopBot(self):
+        self.timer.stop()
+        self._running = False
+        self._status = "STOPPED"
+        self._next_scan = "—"
+        self._log("Bot gestoppt · Shadow-Positionen bleiben gespeichert")
+        self._save_state()
+        self.changed.emit()
+
+    @Slot(int)
+    def setLevel(self, level):
+        level = int(level)
+        if level not in STRATEGIES:
+            return
+        self._level = level
+        self._apply_interval()
+        if self._running:
+            self.timer.start()
+        self._log(f"Neue Strategie für neue Trades: {level} {self.levelName}")
+        self._save_state()
+        self.changed.emit()
+
+    @Slot()
+    def resetShadow(self):
+        if self._running:
+            self.stopBot()
+        self._positions, self._trades, self._events = [], [], []
+        self._paper_cash = self._paper_equity = 1000.0
+        self._pnl = 0.0
+        self._scan_count = self._cycle = 0
+        self._last_action = "Shadow-Konto zurückgesetzt"
+        try:
+            self.state_file.unlink(missing_ok=True)
+        except Exception:
+            pass
+        self.changed.emit()
+
+    @Slot()
+    def forceScan(self):
+        self._request_scan()
+
+    def _request_scan(self):
+        if self._scan_busy:
+            self._last_action = "SCAN läuft bereits · Doppelabruf blockiert"
+            self.changed.emit()
+            return
+        self._scan_busy = True
+        level = self._level
+        self._status = "SCANNING" if self._running else "MANUAL SCAN"
+        self._last_action = f"SCAN · {STRATEGIES[level]['name']} · echte Marktdaten"
+        self.changed.emit()
+
+        def worker():
+            try:
+                rows = self.strategy.scan_universe(level, DEFAULT_UNIVERSE)
+                self.scanFinished.emit(rows, "")
+            except Exception as exc:
+                self.scanFinished.emit([], str(exc))
+
+        threading.Thread(target=worker, daemon=True, name="production-strategy-scan").start()
+
+    @Slot(object, str)
+    def _apply_scan(self, rows, error):
+        self._scan_busy = False
+        self._cycle += 1
+        self._scan_count += 1
+        now = datetime.now()
+        self._last_scan = now.strftime("%H:%M:%S")
+        self._next_scan = f"in {STRATEGIES[self._level]['scan_seconds']} Sek." if self._running else "—"
+        if error:
+            self._status = "RUNNING · DATA ERROR" if self._running else "STOPPED"
+            self._last_action = "WAIT · Marktdatenfehler · keine neue Position"
+            self._log(self._last_action + f" · {error[:100]}")
+            self.changed.emit()
+            return
+
+        self._market_rows = list(rows or [])
+        valid_rows = [r for r in self._market_rows if r.get("signal") != "NO_DATA" and r.get("price")]
+        by_symbol = {r["symbol"]: r for r in valid_rows}
+
+        # Existing positions retain their opening strategy/level.
+        survivors = []
+        any_closed = False
+        for original in self._positions:
+            p = dict(original)
+            p["age"] = int(p.get("age", 0)) + 1
+            row = by_symbol.get(p["symbol"])
+            should_close, why, pnl_pct = self.strategy.exit_decision(p, row)
+            if row and row.get("price"):
+                p["price"] = float(row["price"])
+            if pnl_pct is not None:
+                p["pnl_pct"] = round(float(pnl_pct), 2)
+            if should_close:
+                qty = float(p.get("quantity") or (float(p["amount"]) / float(p["entry"])))
+                value = qty * float(p.get("price") or p["entry"])
+                profit = value - float(p["amount"])
+                self._paper_cash += value
+                self._pnl += profit
+                self._trades.append({
+                    "time": now.strftime("%H:%M:%S"), "symbol": p["symbol"], "side": "SELL",
+                    "strategy": p["strategy"], "amount": round(value, 2), "pnl": round(profit, 2),
+                    "reason": why,
+                })
+                self._last_action = f"SELL {p['symbol']} · {p['strategy']} · {profit:+.2f} USD · {why}"
+                self._log(self._last_action)
+                any_closed = True
+            else:
+                survivors.append(p)
+        self._positions = survivors
+
+        # At most one new shadow position per completed scan.
+        if len(self._positions) < self._max_positions and self._paper_cash >= self._trade_size:
+            held = {p["symbol"] for p in self._positions}
+            candidate = next((r for r in valid_rows if r.get("signal") == "BUY" and r["symbol"] not in held), None)
+            if candidate:
+                price = float(candidate["price"])
+                self._paper_cash -= self._trade_size
+                pos = {
+                    "symbol": candidate["symbol"], "strategy": self.levelName, "level": self._level,
+                    "entry": price, "price": price, "amount": self._trade_size,
+                    "quantity": self._trade_size / price, "age": 0, "pnl_pct": 0.0,
+                    "opened": now.strftime("%H:%M:%S"), "entry_score": candidate["score"],
+                }
+                self._positions.append(pos)
+                self._trades.append({
+                    "time": now.strftime("%H:%M:%S"), "symbol": candidate["symbol"], "side": "BUY",
+                    "strategy": self.levelName, "amount": self._trade_size, "pnl": 0.0,
+                    "reason": candidate.get("reason") or f"Score {candidate['score']:.1f}%",
+                })
+                self._last_action = f"BUY {candidate['symbol']} · {self.levelName} · $10 SHADOW · Score {candidate['score']:.1f}"
+                self._log(self._last_action)
+            elif not any_closed:
+                best = valid_rows[0] if valid_rows else None
+                self._last_action = (f"WAIT · {best['symbol']} {best['score']:.1f}% · {best.get('reason','')}" if best
+                                     else "WAIT · keine verwertbaren Marktdaten")
+        elif not any_closed:
+            self._last_action = "HOLD / RISK GATE · maximale Shadow-Positionen erreicht"
+
+        market_value = 0.0
+        for p in self._positions:
+            qty = float(p.get("quantity") or (float(p["amount"]) / float(p["entry"])))
+            market_value += qty * float(p.get("price") or p["entry"])
+        self._paper_equity = self._paper_cash + market_value
+        self._status = "RUNNING" if self._running else "STOPPED"
+        self._save_state()
+        self.changed.emit()

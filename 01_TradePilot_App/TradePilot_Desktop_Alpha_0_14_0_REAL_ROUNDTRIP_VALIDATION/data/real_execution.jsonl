@@ -1,0 +1,3 @@
+{"ts":"2026-09-01T14:54:10.494835+02:00","event":"PREFLIGHT_BUY","symbol":"AAPL","instrument_id":1001,"budget_eur":10.0}
+{"ts":"2026-09-01T14:54:24.500229+02:00","event":"PREFLIGHT_BUY","symbol":"AAPL","instrument_id":1001,"budget_eur":10.0}
+{"ts":"2026-09-01T14:54:40.774975+02:00","event":"RECONCILE","broker_positions":0,"broker_position_ids":[],"local_position_ids":[],"orphan_broker":[],"stale_local":[],"uncertain_lock":false,"uncertain_safe_to_clear":false}

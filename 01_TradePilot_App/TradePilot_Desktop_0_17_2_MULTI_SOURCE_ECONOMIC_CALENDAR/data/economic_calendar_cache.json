@@ -1,0 +1,59 @@
+{
+  "updated_at": "2026-09-01T15:38:41.966768+00:00",
+  "source": "multi-source-live",
+  "provider_status": {
+    "xoomar/custom": {
+      "rows": 2,
+      "ok": true
+    },
+    "tradingeconomics": {
+      "rows": 0,
+      "ok": false,
+      "configured": false
+    }
+  },
+  "events": [
+    {
+      "event_name": "Nonfarm Payrolls (Employment Situation)",
+      "country": "—",
+      "importance_source": "high",
+      "relevance": "CRITICAL",
+      "semantic": "context_dependent",
+      "scheduled_at": "2026-09-04T12:30:00+00:00",
+      "source": "bls",
+      "forecast": null,
+      "previous": null,
+      "actual": null,
+      "unit": null,
+      "surprise": {
+        "available": false,
+        "raw": null,
+        "direction": "UNKNOWN",
+        "text": "Actual/Forecast noch nicht vollständig"
+      },
+      "provider": "xoomar",
+      "field_sources": {}
+    },
+    {
+      "event_name": "CPI (Consumer Price Index)",
+      "country": "—",
+      "importance_source": "high",
+      "relevance": "CRITICAL",
+      "semantic": "higher_is_risk_off",
+      "scheduled_at": "2026-09-11T12:30:00+00:00",
+      "source": "bls",
+      "forecast": null,
+      "previous": null,
+      "actual": null,
+      "unit": null,
+      "surprise": {
+        "available": false,
+        "raw": null,
+        "direction": "UNKNOWN",
+        "text": "Actual/Forecast noch nicht vollständig"
+      },
+      "provider": "xoomar",
+      "field_sources": {}
+    }
+  ]
+}

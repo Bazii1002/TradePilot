@@ -1,0 +1,6 @@
+print('='*100)
+print('TRADEPILOT 0.12.1 - REAL BUY TRANSPORT LOCKED')
+print('='*100)
+print('Dieser Build sendet keine Echtgeldorder.')
+print('Der state-changing Broker-POST ist in 0.12.1 hart deaktiviert.')
+print('Nutze 17_TEST_REAL_ROUNDTRIP_VALIDATION_NO_POST.bat für den vollständigen BUY->State->CLOSE-Test.')

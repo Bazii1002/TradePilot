@@ -1,0 +1,29 @@
+[
+  {
+    "time": "2026-09-01T14:50:15+00:00",
+    "equity": 577.72,
+    "cash": 577.72,
+    "invested": 0.0,
+    "open_pnl": 0.0,
+    "today_pnl": null,
+    "position_count": 0
+  },
+  {
+    "time": "2026-09-01T14:52:15+00:00",
+    "equity": 577.72,
+    "cash": 577.72,
+    "invested": 0.0,
+    "open_pnl": 0.0,
+    "today_pnl": null,
+    "position_count": 0
+  },
+  {
+    "time": "2026-09-01T15:26:20+00:00",
+    "equity": 577.72,
+    "cash": 577.72,
+    "invested": 0.0,
+    "open_pnl": 0.0,
+    "today_pnl": null,
+    "position_count": 0
+  }
+]

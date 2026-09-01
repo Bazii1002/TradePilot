@@ -1,0 +1,9 @@
+{
+  "AAPL": {
+    "instrumentId": 1001,
+    "symbol": "AAPL",
+    "displayName": "AAPL",
+    "source": "market_data_search",
+    "cachedAt": 1788267239
+  }
+}

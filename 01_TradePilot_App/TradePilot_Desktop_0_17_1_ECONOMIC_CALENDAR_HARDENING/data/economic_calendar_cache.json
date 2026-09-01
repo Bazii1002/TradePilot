@@ -1,0 +1,42 @@
+{
+  "updated_at": "2026-09-01T15:33:29.758012+00:00",
+  "source": "https://xoomar.com/api/markets/calendar",
+  "events": [
+    {
+      "event_name": "Nonfarm Payrolls (Employment Situation)",
+      "country": "—",
+      "importance_source": "high",
+      "relevance": "CRITICAL",
+      "semantic": "context_dependent",
+      "scheduled_at": "2026-09-04T12:30:00+00:00",
+      "source": "bls",
+      "forecast": null,
+      "previous": null,
+      "actual": null,
+      "surprise": {
+        "available": false,
+        "raw": null,
+        "direction": "UNKNOWN",
+        "text": "Actual/Forecast noch nicht vollständig"
+      }
+    },
+    {
+      "event_name": "CPI (Consumer Price Index)",
+      "country": "—",
+      "importance_source": "high",
+      "relevance": "CRITICAL",
+      "semantic": "higher_is_risk_off",
+      "scheduled_at": "2026-09-11T12:30:00+00:00",
+      "source": "bls",
+      "forecast": null,
+      "previous": null,
+      "actual": null,
+      "surprise": {
+        "available": false,
+        "raw": null,
+        "direction": "UNKNOWN",
+        "text": "Actual/Forecast noch nicht vollständig"
+      }
+    }
+  ]
+}

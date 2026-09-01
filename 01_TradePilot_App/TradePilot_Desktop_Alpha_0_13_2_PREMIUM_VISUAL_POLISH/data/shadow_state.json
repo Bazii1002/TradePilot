@@ -1,0 +1,100 @@
+{
+  "level": 1,
+  "scan_count": 5,
+  "positions": [
+    {
+      "symbol": "AMD",
+      "strategy": "FAST",
+      "level": 1,
+      "entry": 469.95,
+      "price": 469.95,
+      "amount": 10.0,
+      "quantity": 0.021278859453133313,
+      "age": 4,
+      "pnl_pct": 0.0,
+      "opened": "13:41:16",
+      "entry_score": 87.0
+    },
+    {
+      "symbol": "TSLA",
+      "strategy": "FAST",
+      "level": 1,
+      "entry": 367.92,
+      "price": 367.92,
+      "amount": 10.0,
+      "quantity": 0.027179821700369644,
+      "age": 3,
+      "pnl_pct": 0.0,
+      "opened": "13:41:20",
+      "entry_score": 86.7
+    },
+    {
+      "symbol": "AMZN",
+      "strategy": "FAST",
+      "level": 1,
+      "entry": 259.93,
+      "price": 259.93,
+      "amount": 10.0,
+      "quantity": 0.03847189627976763,
+      "age": 2,
+      "pnl_pct": 0.0,
+      "opened": "13:42:20",
+      "entry_score": 86.6
+    }
+  ],
+  "trades": [
+    {
+      "time": "13:41:16",
+      "symbol": "AMD",
+      "side": "BUY",
+      "strategy": "FAST",
+      "amount": 10.0,
+      "pnl": 0.0,
+      "reason": "Trend + \u00b7 RSI 60 \u00b7 Mom +0.3% \u00b7 Vol 5.3x"
+    },
+    {
+      "time": "13:41:20",
+      "symbol": "TSLA",
+      "side": "BUY",
+      "strategy": "FAST",
+      "amount": 10.0,
+      "pnl": 0.0,
+      "reason": "Trend + \u00b7 RSI 58 \u00b7 Mom +0.3% \u00b7 Vol 3.5x"
+    },
+    {
+      "time": "13:42:20",
+      "symbol": "AMZN",
+      "side": "BUY",
+      "strategy": "FAST",
+      "amount": 10.0,
+      "pnl": 0.0,
+      "reason": "Trend + \u00b7 RSI 58 \u00b7 Mom +0.4% \u00b7 Vol 4.5x"
+    }
+  ],
+  "events": [
+    {
+      "time": "13:42:20",
+      "text": "BUY AMZN \u00b7 FAST \u00b7 $10 SHADOW \u00b7 Score 86.6"
+    },
+    {
+      "time": "13:41:20",
+      "text": "BUY TSLA \u00b7 FAST \u00b7 $10 SHADOW \u00b7 Score 86.7"
+    },
+    {
+      "time": "13:41:18",
+      "text": "Bot gestartet \u00b7 echte Signal-Engine \u00b7 FAST"
+    },
+    {
+      "time": "13:41:16",
+      "text": "BUY AMD \u00b7 FAST \u00b7 $10 SHADOW \u00b7 Score 87.0"
+    },
+    {
+      "time": "13:41:11",
+      "text": "Neue Strategie f\u00fcr neue Trades: 1 FAST"
+    }
+  ],
+  "paper_cash": 970.0,
+  "paper_equity": 1000.0,
+  "pnl": 0.0,
+  "cycle": 5
+}
